@@ -9,7 +9,7 @@ mkts = ex.load_markets()
 def btc_to_satoshi(btc):
     return btc*100000000
 
-def fetch_df(days_back = 1, timestep = '15m', pair_name = 'MAID/BTC'):
+def fetch_df(days_back = 1, timestep = '5m', pair_name = 'MAID/BTC'):
     ohlcv = ex.fetch_ohlcv(pair_name,
                            timestep,
                            since = int((datetime.utcnow() - timedelta(days = days_back)).replace(tzinfo=timezone.utc).timestamp())*1000
